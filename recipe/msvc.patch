@@ -1,0 +1,14 @@
+diff --git a/src/c_wrapper/function.h b/src/c_wrapper/function.h
+index 40525a1..853a4f6 100644
+--- a/src/c_wrapper/function.h
++++ b/src/c_wrapper/function.h
+@@ -75,9 +75,6 @@ private:
+     template<template<typename...> class Getter, int... S>
+     PYOPENCL_INLINE auto
+     __get(seq<S...>)
+-    -> decltype(std::tuple_cat(
+-                    ensure_tuple(Getter<ArgConvert<Types> >::get(
+-                                     std::get<S>(*(tuple_base*)this)))...))
+     {
+         return std::tuple_cat(
+             ensure_tuple(Getter<ArgConvert<Types> >::get(
