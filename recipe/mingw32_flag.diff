@@ -1,0 +1,13 @@
+diff --git a/setup.py b/setup.py
+index 4666660..c3e5971 100644
+--- a/setup.py
++++ b/setup.py
+@@ -95,7 +95,7 @@ class BuildExt(build_ext):
+     def build_extensions(self):
+         ct = self.compiler.compiler_type
+         opts = self.c_opts.get(ct, [])
+-        if ct == 'unix':
++        if ct in ['unix', 'mingw32']:
+             opts.append('-DVERSION_INFO="%s"' % self.distribution.get_version())
+             opts.append(cpp_flag(self.compiler))
+             if has_flag(self.compiler, '-fvisibility=hidden'):

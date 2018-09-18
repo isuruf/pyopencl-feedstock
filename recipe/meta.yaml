@@ -14,6 +14,7 @@ source:
     patches:
     - pyopencl-stack-container.diff
     - fix-builtin-kernel-wrapper.diff
+    - mingw32_flag.diff
 
 build:
     number: {{ build_number }}
